@@ -2,6 +2,20 @@
 
 A UIViewController subclass for revealing a rear (left and/or right) view controller behind a front controller, inspired by the Facebook app, done right!
 
+
+## NOTE ( Version 2.3)
+
+* This version fixes an old bug that caused an incorrect initialization of the class on particular scenarios.
+* The old RevealControllerStoryboardExample has been removed from the repo as it was deprecated, please use the newest RevealControllerStoryboardExample2 instead.
+
+
+## NOTE ( Upgrading to Version 2.1)
+
+This version incorporates a new approach to Story Boards support. 
+
+* There are now two different segue classes, SWRevealViewControllerSegueSetController and SWRevealViewControllerSeguePushController. The first one is meant to set the revealViewController with the initial controllers from the story board. The second one is used to push controllers to the front with animation. The former SWRevealViewControllerSegue still works but it has been deprecated.
+* A new StoryBoard example, RevealControllerStoryBoardExample2, has been added to demonstrate the use of the new segue classes. More responsability has been moved to the Story Board design while simplifying the SWRevealViewController implementation.
+
 ## IMPORTANT NOTE: (Upgrading to Version 2.0)
 
 A number of changes have been made on version 2.0 that may break your existing project. In case you are not ready to upgrade you can continue using previous versions. The last commit before 2.0.0 was tagged v1.1.3. The important changes that affect 2.0.0 are described next. 
@@ -112,11 +126,13 @@ As of November 15, 2013 Release Notes are updated on the class main header file.
 
 ## Tutorials
 
-* Some time ago the guys at AppCoda published an online tutorial featuring the SWRevealViewController: "How To Add a Slide-out Sidebar Menu in Your Apps" (thanks for that). You will find it at http://www.appcoda.com/ios-programming-sidebar-navigation-menu/ . Not updated to the last SWRevealViewController version but still worth a read.
+* Some time ago the guys at AppCoda published an online tutorial featuring the SWRevealViewController: "How To Add a Slide-out Sidebar Menu in Your Apps" (thanks for that). You will find it at http://www.appcoda.com/ios-programming-sidebar-navigation-menu/ . They have recently updated it to match the lastest SWRevealViewController version. Worth a read.
 
 * Tammy Coron on Ray Wenderlich blog made an excelent tutorial on "how to build a slide-out navigation panel". She recomends the SWRevealViewController in case you do not want to implement one yourself. http://www.raywenderlich.com/32054/how-to-create-a-slide-out-navigation-like-facebook-and-path
 
 * You can also check "Drawer View iOS App with SWRevealViewController" at http://bcdilumonline.blogspot.com.es/2014/03/drawer-view-ios-app-with.html for step by step instructions on how to install and use the controller. Worth a read for those who do not quite feel at home with storyboards :-)  
+
+* I also found this one in Spanish "Sidebar o menú lateral mediante SWRevealViewController" by wikimovil.es at http://wikimovil.es/sidebar-o-menu-lateral-mediante-swrevealviewcontroller-parte-1/ which is doing a good job with detailed explanations on how to implement it using Story Boards (before V2.1)
 
 ## Xamarin Binding
 
@@ -124,7 +140,7 @@ Thanks to Jesper Vandborg for having contributed with a Xamarin Binding project 
 
 ## Special Mentions
 
-A Special Thank you to Joan Martin who formely worked at http://www.sweetwilliamsl.com and has recently been developing an app for http://www.citizen.tv. He had the original idea and implemented code for generic view deployment/undeployment and replacement of view controllers used in the class. 
+A Special Thank you to [Joan Martin](http://www.vilanovi.com) who formely worked at http://www.sweetwilliamsl.com and has recently been developing an app for http://www.citizen.tv. He had the original idea and implemented code for generic view deployment/undeployment and replacement of view controllers used in the class. 
 
 Early code and api was inspired on a similar class by Philip Kluz (Philip.Kluz@zuui.org)
 	
